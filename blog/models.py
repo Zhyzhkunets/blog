@@ -10,7 +10,7 @@ class Post(models.Model):
   descrip = models.CharField(max_length=100)
   section = models.ForeignKey(Section)
   blog = models.TextField(max_length=10000)
-  tags = TagField()
+  #tags = TagField()
   creation_date = models.DateTimeField(auto_now_add=True)
   published_date = models.DateTimeField(auto_now=True)
-  #author =    
+  author = models.CharField(max_length=50) #?
