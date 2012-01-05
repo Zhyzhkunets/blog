@@ -6,6 +6,9 @@ class Section(models.Model):
   title = models.CharField(max_length=50)
   slug = models.SlugField(unique=True, max_length=50)
   
+  def __unicode__(self): 
+    return self.title  
+    
 class Post(models.Model):
   title = models.CharField(max_length=50)
   slug = models.SlugField(unique=True, max_length=50)
@@ -15,4 +18,7 @@ class Post(models.Model):
   #tags = TagField()
   creation_date = models.DateTimeField(auto_now_add=True)
   published_date = models.DateTimeField(null=True, blank=True)
-  author = models.ForeignKey(User, null=True, blank=True, verbose_name=u"Автор")
+  author = models.ForeignKey(User, null=True, blank=True, verbose_name=u"author")
+  
+  def __unicode__(self):
+      return self.title 
