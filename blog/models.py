@@ -1,4 +1,6 @@
+# encoding=utf8
 from django.db import models
+from django.contrib.auth.models import User
 
 class Section(models.Model):
   title = models.CharField(max_length=50)
