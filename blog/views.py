@@ -1,5 +1,6 @@
 from django.shortcuts import render_to_response
 from mysite.blog.models import *
+#from mysite.templates import *
 
 def home_views(request):
   return render_to_response('home.html', {'home':'this_is_home_page'})
@@ -17,5 +18,5 @@ def months_views(request, year, month):
   return render_to_response('months_views.html', {'months':'this is months page'})
 
 def days_views(request, year, month, day):
-  return render_to_response('days_views', {'days':'this is days page'})
+  return render_to_response('days_views.html', {'days':'this is days page'})
    
