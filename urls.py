@@ -3,14 +3,13 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    #(r'^admin/', include(admin.site.urls)),
-    #(r'^section/$', 'section_views'),
-    (r'^section/(?P<name>w+)/$', 'section_views'),
+    (r'^admin/', include(admin.site.urls)),
     (r'^$', 'home_views'),
-    (r'^post/(?P<num>\d+)/$', 'post_views'),
-    (r'^(\d{4})/(?P<slug>[-w]+)/$', 'years_views'),
-    (r'^(\d{4})/(\d{2})/(?P<slug>[-w]+)/$', 'months_views'),
-    (r'^(\d{4})/(\d{2})/(\d{2})/(?P<slug>[-w]+)/$', 'days_views'),    
+    (r'^(?P<slug>[-\w]+)/$', 'section_view'),
+    (r'^(?P<year>\d{4})/(?P<month>\d{2})/(?P<day>\d{2})/(?P<slug>[-\w]+)/$', 'detail_views'),
+    (r'^(?P<year>\d{4})/$', 'years_views'),
+    (r'^(?P<year>\d{4})/(?P<month>\d{2})/$', 'months_views'),
+    (r'^(?P<year>\d{4})/(?P<month>\d{2})/(?P<day>\d{2})/$', 'days_views'),
 )
 
 
