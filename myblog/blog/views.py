@@ -1,5 +1,5 @@
 from django.shortcuts import render_to_response
-from mysite.blog.models import *
+from models import *
 #from mysite.templates import *
 
 def home_views(request):
