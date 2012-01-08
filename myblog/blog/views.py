@@ -5,8 +5,9 @@ def home_views(request):
   posts = Post.objects.all().order_by('-id')
   return render_to_response('home.html', {'posts':posts})
   
-def section_view(request, slug):
-  return render_to_response('section_view.html', {'sections':'this is sections page'})   
+def section_view(request, slug='section'):
+  sections = Section.objects.all()
+  return render_to_response('section_view.html', {'sections':section})   
 
 def detail_views(request, year, month, day, slug):
   return render_to_response('detail_views.html', {'detail':'this is detail page'})
