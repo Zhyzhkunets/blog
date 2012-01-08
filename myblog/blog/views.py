@@ -1,12 +1,12 @@
 from django.shortcuts import render_to_response
 from models import *
-#from mysite.templates import *
 
 def home_views(request):
-  return render_to_response('home.html', {'home':'this_is_home_page'})
+  posts = Post.objects.all().order_by('-id')
+  return render_to_response('home.html', {'posts':posts})
   
 def section_view(request, slug):
-  return render_to_response('section_view.html', {'section':'this is section page'})   
+  return render_to_response('section_view.html', {'sections':'this is sections page'})   
 
 def detail_views(request, year, month, day, slug):
   return render_to_response('detail_views.html', {'detail':'this is detail page'})
