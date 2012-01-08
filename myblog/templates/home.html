@@ -2,6 +2,11 @@
   <head>
   </head>
   <body>
-    <h1>{{ home }}</h1>
+    {% for item in posts %}
+    <p><h3>{{ item.title }}</h3></p>
+    <p>{{ item.author }}: {{ item.published_date|date:"j M Y P" }}, {{ item.section }}</p>
+    <p>{{ item.descr }}</p>
+    <p>{{item.blog }}</p>
+    {% endfor %}
   </body>
 </html>
