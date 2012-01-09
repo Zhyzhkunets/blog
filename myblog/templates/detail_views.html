@@ -1,8 +1,8 @@
-<html>
-  <head>
-  </head> 
-  <body>
-    <h1>{{ detail }}</h1>
-  </body>
-</html>
-            
+{% extends "base.html" %}
+{% block content %}
+<p><h3>{{ post.title }}</h3></p>
+<p>{{ post.author }}: {{ post.published_date|date:"j M Y P" }}, {{ post.section }}</p>
+<p>{{ post.descr }}</p>
+<p>{{ post.blog }}</p>
+<hr>
+{% endblock %}     
