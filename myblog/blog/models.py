@@ -7,7 +7,7 @@ class Section(models.Model):
   slug = models.SlugField(unique=True, max_length=50)
   
   def __unicode__(self): 
-    return self.title  
+    return self.title    
     
 class Post(models.Model):
   title = models.CharField(max_length=50)
@@ -22,3 +22,6 @@ class Post(models.Model):
   
   def __unicode__(self):
       return self.title 
+      
+  class Meta:
+    ordering=['-published_date']
