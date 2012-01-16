@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+{% for posts in object_list %}
+{% url post_url item.creation_date.year item.creation_date.month item.creation_date.day item.slug as post_href %}
+<li>
+  <a href="{{ post_href }}">posts.title</a>
+</li>
+{% endfor %}
+{% endblock %}

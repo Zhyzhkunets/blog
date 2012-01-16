@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-{% for item in posts %}
+{% for item in objects_list %}      
 {% url post_url item.creation_date.year item.creation_date.month item.creation_date.day item.slug as post_href %}
 <h3><a href="{{ post_href }}">{{ item.title }}</a></h3>
 <p>{{ item.author }}: {{ item.published_date|date:'j M Y P' }}, {{ item.section }}</p>
