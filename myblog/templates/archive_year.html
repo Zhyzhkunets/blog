@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+{% for months in date_list %}
+{% url archive_years months.creation_date.year months.creation_date.months as href_months %}
+<li>
+  <a href="{{ href_month}}">{{ months }}<a/>
+</li>
+{% endfor %}
+{% endlock %}
