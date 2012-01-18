@@ -1,8 +1,0 @@
-{% extends "base.html" %}
-{% block content %}
-{% for month in date_list %}
-<li>
-  <a href="/{{ month }}/{{ month }}/">{{ month|date:'F' }}<a/>
-</li>
-{% endfor %}
-{% endlock %}
