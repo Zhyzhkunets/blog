@@ -1,7 +1,10 @@
 from django.conf.urls.defaults import *
 from django.views.generic import date_based
-from views import *  
 from myblog.blog.models import Post
+from time import strftime
+from views import *  
+import time
+
 
 years_info = {
   'queryset':Post.objects.all(),
@@ -13,13 +16,14 @@ months_info = {
   'queryset':Post.objects.all(), 
   'date_field':'creation_date',
   'template_name':'archive_month.html',
+  'month_format':time.strftime('%m'),
 }                                 
 
 days_info = {
   'queryset':Post.objects.all(),
   'date_field':'creation_date', 
   'template_name':'archive_day.html',    
-  #'make_object_list':True,
+  'month_format':time.strftime('%m'),
 }                                 
 
 urlpatterns = patterns('',
