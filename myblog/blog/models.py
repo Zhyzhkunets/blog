@@ -1,6 +1,7 @@
 # encoding=utf8
 from django.db import models
 from django.contrib.auth.models import User
+from datetime import datetime
 
 class Section(models.Model):
   title = models.CharField(max_length=50)
@@ -20,8 +21,14 @@ class Post(models.Model):
   published_date = models.DateTimeField(null=True, blank=True)
   author = models.ForeignKey(User, null=True, blank=True, verbose_name=u"author")
   
-  def __unicode__(self):
-      return self.title 
-      
   class Meta:
     ordering=['-published_date']
+    
+  def __unicode__(self):
+    return self.title
+  
+  def get_absolute_url(self):
+    return '/'.join([str(self.creation_date.year).zfill(4), 
+                    str(self.creation_date.month).zfill(2), 
+                    str(self.creation_date.day).zfill(2), 
+                    self.slug])
