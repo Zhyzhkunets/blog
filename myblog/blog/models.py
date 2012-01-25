@@ -28,13 +28,7 @@ class Post(models.Model):
     return self.title
   
   def get_absolute_url(self):
-<<<<<<< HEAD
     return '/'.join([str(self.published_date.year).zfill(4), 
                     str(self.published_date.month).zfill(2), 
                     str(self.published_date.day).zfill(2), 
-=======
-    return '/'.join([str(self.creation_date.year).zfill(4), 
-                    str(self.creation_date.month).zfill(2), 
-                    str(self.creation_date.day).zfill(2), 
->>>>>>> 7fcc30fced97d202bf9f4654b1c880b613325f03
                     self.slug])
