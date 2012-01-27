@@ -1,7 +1,7 @@
 # encoding=utf8
 from django.db import models
 from django.contrib.auth.models import User
-from datetime import datetime
+from tagging.fields import TagField
 
 class Section(models.Model):
   title = models.CharField(max_length=50)
@@ -16,7 +16,7 @@ class Post(models.Model):
   descr = models.TextField(max_length=100)
   section = models.ForeignKey(Section)
   blog = models.TextField(max_length=100000)
-  #tags = TagField()
+  tags = TagField()
   creation_date = models.DateTimeField(auto_now_add=True)
   published_date = models.DateTimeField(null=True, blank=True)
   author = models.ForeignKey(User, null=True, blank=True, verbose_name=u"author")
