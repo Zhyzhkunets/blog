@@ -1,4 +1,5 @@
 # encoding=utf8
+#ololo
 from django.db import models
 from django.contrib.auth.models import User
 from tagging.fields import TagField
